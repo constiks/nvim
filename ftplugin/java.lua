@@ -1,7 +1,6 @@
 vim.opt_local.shiftwidth = 4
 vim.opt_local.tabstop = 4
 vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
-
 local status, jdtls = pcall(require, "jdtls")
 if not status then
   return
@@ -10,17 +9,18 @@ end
 -- Determine OS
 local home = os.getenv "HOME"
 if vim.fn.has "mac" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
+  WORKSPACE_PATH = home .. "/vim_workspace/"
   CONFIG = "mac"
 elseif vim.fn.has "unix" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
+  WORKSPACE_PATH = home .. "/vim_workspace/"
   CONFIG = "linux"
 else
   print "Unsupported system"
 end
 
 -- Find root of project
-local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+-- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+local root_markers = { ".git", "mvnw", "gradlew", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
   return
@@ -50,7 +50,7 @@ local config = {
   cmd = {
 
     -- 💀
-    "java", -- or '/path/to/java11_or_newer/bin/java'
+    home .. "/.sdkman/candidates/java/17.0.6-tem/bin/java", -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
@@ -58,7 +58,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-    "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    "-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -68,14 +68,14 @@ local config = {
 
     -- 💀
     "-jar",
-    vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+    vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
     -- Must point to the                                                     Change this to
     -- eclipse.jdt.ls installation                                           the actual version
 
     -- 💀
     "-configuration",
-    home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
+    home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. CONFIG,
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
     -- Must point to the                      Change to one of `linux`, `win` or `mac`
     -- eclipse.jdt.ls installation            Depending on your system.
@@ -92,7 +92,7 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  root_dir = root_dir,
+   root_dir = root_dir,
 
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
