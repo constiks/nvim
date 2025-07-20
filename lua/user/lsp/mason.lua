@@ -6,8 +6,7 @@ local servers = {
     "pyright",
     "bashls",
     "jsonls",
-    "yamlls",
-    "phpactor"
+    "yamlls"
 }
 
 local settings = {
