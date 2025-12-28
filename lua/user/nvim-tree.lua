@@ -4,7 +4,7 @@ require("nvim-tree").setup({
     update_cwd = true,
   },
   renderer = {
-    root_folder_modifier = ":t",
+    root_folder_label = ":~:s?$?/..?",
     icons = {
       glyphs = {
         default = "",
