@@ -30,7 +30,6 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-
 local workspace_dir = WORKSPACE_PATH .. project_name
 
 JAVA_DAP_ACTIVE = true
@@ -50,7 +49,7 @@ local config = {
   cmd = {
 
     -- 💀
-    home .. "/.sdkman/candidates/java/17.0.9-tem/bin/java", -- or '/path/to/java11_or_newer/bin/java'
+    home .. "/.sdkman/candidates/java/21.0.9-tem/bin/java", -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",

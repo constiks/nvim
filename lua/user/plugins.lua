@@ -87,7 +87,7 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim", commit = "b4da76be54691e854d3e0e02c36b0245f945c2c7" }
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", commit = "f14b356d548eafb6e0270aad904907424e16f9cd" }
+  use { "nvim-treesitter/nvim-treesitter", commit = "36fcb4a4238928f0b627e1ab84ade0acc1facc2c" }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "0cb5a7753d3c4b8e9cfdc9d88d9110cb8d4b1544" }
@@ -96,6 +96,9 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap", commit = "5dd4d50f2e6a2eaf9e57fad023d294ef371bda35" }
   use { "rcarriga/nvim-dap-ui", commit = "cf91d5e2d07c72903d052f5207511bf7ecdb7122" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+
+    -- Github copilot
+  use { "github/copilot.vim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
