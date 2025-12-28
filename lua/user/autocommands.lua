@@ -44,3 +44,29 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
     vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
   end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    -- Floats
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+    -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+
+    -- Border (use a Solarized accent)
+    -- vim.api.nvim_set_hl(0, "WhichKeyBorder", {
+    --   fg = "#586e75", -- solarized base01
+    --   bg = "NONE",
+    -- })
+
+-- vim.api.nvim_set_hl(0, "FloatBorder", {
+--   fg = "#586e75",
+--   bg = "NONE",
+-- })
+    -- WhichKey
+    -- vim.api.nvim_set_hl(0, "WhichKeyFloat", { link = "Normal" })
+    -- vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "Normal" })
+
+    -- NvimTree top/root line
+    vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { link = "Directory" })
+    vim.api.nvim_set_hl(0, "NvimTreeNormal", { link = "Normal" })
+  end,
+})

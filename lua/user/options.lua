@@ -43,3 +43,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
 vim.loader.enable()
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
