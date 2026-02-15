@@ -39,6 +39,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", "No highlight")
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<cr>")
+keymap("n", "<leader>c", "<cmd>Bdelete!<cr>")
 
 -- Better paste
 keymap("v", "p", '"_dP')
@@ -54,10 +55,10 @@ keymap("v", ">", ">gv")
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<cr>")
-keymap("n", "<leader>ft", ":Telescope live_grep<cr>")
-keymap("n", "<leader>fp", ":Telescope projects<cr>")
-keymap("n", "<leader>fb", ":Telescope buffers<cr>")
+keymap("n", "<leader>f", ":Telescope find_files<cr>")
+keymap("n", "<leader>F", ":Telescope live_grep<cr>")
+-- keymap("n", "<leader>fp", ":Telescope projects<cr>")
+-- keymap("n", "<leader>fb", ":Telescope buffers<cr>")
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<cr>")
