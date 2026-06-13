@@ -79,6 +79,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>")
 keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", "Float")
 keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal")
 keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical")
+keymap("n", "<leader>tn", "<cmd>TermNew<cr>", "New")
 
 -- GitSigns
 keymap("n", "<leader>gb", "<cmd>Gitsigns blame<cr>")
