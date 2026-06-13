@@ -90,7 +90,7 @@ return packer.startup(function(use)
   use { "nvim-treesitter/nvim-treesitter", commit = "36fcb4a4238928f0b627e1ab84ade0acc1facc2c" }
 
   -- Git
-  use { "lewis6991/gitsigns.nvim", commit = "0cb5a7753d3c4b8e9cfdc9d88d9110cb8d4b1544" }
+  use { "lewis6991/gitsigns.nvim", commit = "25050e4ed39e628282831d4cbecb1850454ce915" }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "5dd4d50f2e6a2eaf9e57fad023d294ef371bda35" }

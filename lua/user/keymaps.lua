@@ -79,3 +79,18 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>")
 keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", "Float")
 keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal")
 keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical")
+
+-- GitSigns
+keymap("n", "<leader>gb", "<cmd>Gitsigns blame<cr>")
+keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis<cr>")
+keymap("n", "<leader>gj", "<cmd>Gitsigns next_hunk<cr>")
+keymap("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>")
+keymap("n", "<leader>gl", "<cmd>Gitsigns blame_line<cr>")
+keymap("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>")
+keymap("n", "<leader>gP", "<cmd>Gitsigns preview_hunk_inline<cr>")
+keymap("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>")
+keymap("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>")
+keymap("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>")
+keymap("n", "<leader>gS", "<cmd>Gitsigns stage_buffer<cr>")
+keymap("n", "<leader>gt", "<cmd>Gitsigns toggle_current_line_blame<cr>")
+
